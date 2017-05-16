@@ -23,7 +23,10 @@ def normalisasi(image):
 
 def main():
     img = misc.imread(sys.argv[1])
-    showImage(img ,normalisasi(img))
+    filename = sys.argv[1].split('.',1)[0]
+    normImg = normalisasi(img)
+    showImage(img ,normImg)
+    misc.imsave(filename+'Norm.jpg',normImg)
 
 if __name__ == "__main__":
     main()
